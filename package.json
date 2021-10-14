@@ -1,0 +1,31 @@
+{
+  "name": "dexterity-prelims",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ion05/dexterity-prelims.git"
+  },
+  "author": "Tech Syndicate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ion05/dexterity-prelims/issues"
+  },
+  "homepage": "https://github.com/ion05/dexterity-prelims#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
