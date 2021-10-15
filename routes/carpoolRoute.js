@@ -27,5 +27,11 @@ router.post('/create', ensureAuthenticated, (req,res)=> {
         res.redirect('/dashboard')
     })
 })
+router.post('/accept', async (req,res)=> {
+    const id = req.body.id
+    Carpool.findOneAndUpdate({"_id":id}, {$inc : {"nopeople": -1}, $push : {"recievers": req.user.username}}).then((result)=> {
+        res.redirect('/dashboard')
+    })
+})
 
 module.exports=router

@@ -17,6 +17,10 @@
     <%= carpools[i]['date'] %> <br>
     <%= carpools[i]['nopeople'] %> <br>
     <%= carpools[i]['description'] %> <br> <br>
+    <form action="/carpool/accept" method="post">
+        <input value="<%=carpools[i]['_id']%>" id="id" name="id" hidden>
+        <button type="submit">Accept Carpool</button>
+    </form>
     <% } %>
 </body>
 
