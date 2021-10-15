@@ -6,7 +6,8 @@ const Carpool = require('../models/Carpool')
 
 router.get('/',ensureAuthenticated,(req,res)=>{
     const username = req.user.username
-    Carpool.find({giver: {$ne: username}, recievers: {$ne: username}}).then((results)=> {
+    let todayDate = Date.now()
+    Carpool.find({giver: {$ne: username}, recievers: {$ne: username}, date: {$gt: todayDate}}).then((results)=> {
         res.render('dashboard',{
             user: req.user,
             carpools: results
