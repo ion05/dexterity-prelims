@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
     date:{
         type: Date,
         default: Date.now()
+    },
+    points: {
+        type:Number,
+        default: 0
     }
 }, {timestamps:true})
 

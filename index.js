@@ -39,11 +39,13 @@ mongoose.connect(String(mongoURI), {
 
 const indexRoute = require('./routes/indexRoute')
 const dashboardRoute = require('./routes/dashboardRoute')
+const leaderboardRoute = require('./routes/leaderboardRoute')
 const carpoolRoute = require('./routes/carpoolRoute')
 
 app.use('/', indexRoute)
 app.use('/dashboard',dashboardRoute)
 app.use('/carpool', carpoolRoute)
+app.use('/leaderboard', leaderboardRoute)
 app.get('*',(req,res)=>{
     res.send('404')
 })
