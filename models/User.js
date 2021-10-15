@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     }
-})
+}, {timestamps:true})
 
 const User = mongoose.model('users', UserSchema)
 

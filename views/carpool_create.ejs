@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Carpool</title>
+</head>
+
+<body>
+    <h2>Request a Carpool</h2>
+    <form action="/carpool/create" method="POST">
+        <input name="date" id="date" required placeholder="Date of Carpool"> <br><br>
+        <input name="nopeople" id="date" required> <br><br>
+        <input name="description" id="description"> <br><br>
+        <input name="origin" id="origin" required> <br><br>
+        <input name="destination" id="destination" required> <br><br>
+        <label for="regular">Regular Carpool</label>
+        <input type="checkbox" name="regular" id="regular"> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+
+</html>
