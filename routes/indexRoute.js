@@ -16,8 +16,7 @@ router.get('/login',forwardAuthenticated,(req,res)=>{
     res.render('login')   
 })
 
-router.post('/register',(req,res)=>{
-    console.log(req.body)
+router.post('/register',(req,res)=>{      
     const {fullname, username,email,password,password2} = req.body
     let errors = []
     if(password.length < 6){

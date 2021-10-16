@@ -404,7 +404,7 @@ input{
 }
 .line-1,.line-2{
     height: 0.2vw;
-    width: 10vw;
+    width: 6vw;
     background: #111;
     position: absolute;
 
@@ -420,35 +420,33 @@ input{
     text-decoration: none;
     border-radius: 10px;
     position: absolute;
-    margin-left:12.5vw;
-    margin-top: 7.5vw;
+    margin-left:4vw;
+    margin-top: 3.5vw;
     text-align: center;
 }
-.carpool-log{
-    margin-top: 13.5vw;
-}
-.carpool-log h2{
-    font-size: 2.5vw;
-    margin-left: 7.5vw;
+.nav-user{
+    background: #eee;
+    width: 22.5vw;
+    height: 100vw;
 }
 .line-1{
-    margin-left: 7.5vw;
-    margin-top: 12.71vw;
+    margin-left: 2.5vw;
+    margin-top: 10.71vw;
 }
 .line-2{
-    margin-left: 22.5vw;
-    margin-top: 12.71vw;
+    margin-left: 13.5vw;
+    margin-top: 10.71vw;
 }
 .or{
-    margin-left:19vw;
-    margin-top: 11.5vw;
+    margin-left:10vw;
+    margin-top: 9.5vw;
     position: absolute;
     font-size: 1.5vw;
 }
 .user{
-    margin-left: 77.5vw;
+    margin-left: 3.75vw;
     font-size: 1.75vw;
-    padding-top: 2.5vw;
+    padding-top: 7.5vw;
 }
 .user a {
     color: #FF625A;
@@ -457,4 +455,119 @@ input{
 }
 .user a:hover{
     text-decoration: underline;
+}
+.n-c{
+    position: absolute;
+    margin-top: 15vw;
+    width: 15vw;
+    height: 2.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    transition: all 0.2s ease;
+    border:none;
+    margin-left: 3.5vw;
+    border-radius: 2.5px;
+    background: rgba(199, 198, 198, 0.432);
+}
+.n-c:focus{
+    outline: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    border: 0.75px solid rgba(0, 0, 0, 0.137);
+    width: 17.5vw;
+    margin-left: 2.5vw;
+}
+.carpool-log{
+    position: absolute;
+    margin-top: -95vw;
+    margin-left: 25vw;
+}
+
+.carpool-log h2{
+    font-size: 3.5vw;
+}
+.carpool-card{
+    margin-left: 2.5vw;
+    margin-top: 2.5vw;
+    background:rgba(199, 198, 198, 0.432);
+    padding:1.5vw;
+    width: 55vw;
+    border-radius: 1vw;
+}
+.carpool-card button{
+    height: 2.5vw;
+    background: rgba(0, 0, 0, 0.87);
+    border:none;
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+    border-radius: .5vw;
+    cursor: pointer;
+}
+.req-carp{
+    position: absolute;
+    margin-top: 5vw;
+    padding-left: 5vw;
+}
+.req-img{
+    position: absolute;
+    width: 40%;
+    margin-left: 50vw;
+    margin-top: 15vw;
+}
+.req-carp h2{
+    font-size: 3.5vw;
+}
+.req-carp form{
+    margin-top: 5vw;
+}
+.req-carp form input{
+    width: 25vw;
+    height: 2.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    border-radius: 2.5px;
+    border: none;
+    background: rgba(199, 198, 198, 0.432);
+    transition: all 0.5s ease;
+}
+.req-carp form input:focus{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 5px;
+}
+.req-carp form button{
+    width: 15vw;
+    height: 2.5vw;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    border:none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15vw;
+    cursor: pointer;
+}
+.material-icons-outlined{
+    font-family: 'Material Icons', sans-serif;
+}
+.back{
+    font-size: 2.5vw;
+    position: absolute;
+    color: black;
+    transition: all 0.2s ease;
+    margin-left: 85vw;
+    margin-top: 3.5vw;
+    text-decoration: none;
+}
+.back:hover,.msg:hover{
+    color: #FF625A;
+}
+.msg{
+    position: absolute;
+    font-size: 2.5vw;
+    position: absolute;
+    color: black;
+    transition: all 0.2s ease;
+    margin-left: 87.5vw;
+    margin-top: -97.5vw;
+    text-decoration: none;
 }

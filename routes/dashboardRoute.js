@@ -6,8 +6,8 @@ const Carpool = require('../models/Carpool')
 
 router.get('/',ensureAuthenticated,(req,res)=>{
     const username = req.user.username
-    Carpool.find({giver: {$ne: username}}).then((results)=> {
-        console.log(results)
+    let todayDate = Date.now()
+    Carpool.find({giver: {$ne: username}, recievers: {$ne: username}, date: {$gt: todayDate}}).then((results)=> {
         res.render('dashboard',{
             user: req.user,
             carpools: results
@@ -17,10 +17,11 @@ router.get('/',ensureAuthenticated,(req,res)=>{
 })
 
 router.get('/profile/:id',ensureAuthenticated, async (req,res)=>{
-    let id = req.params.id
-    User.findOne({"id":id}).then((result)=> {
-        res.render('profile', {user:result})
-    })
+    let id = req.user.id
+    const user = await User.findOne({"id":id})
+    const carpoolAccepted = await Carpool.find({recievers: {$in: [req.user.username]}})
+    const carpoolListed = await Carpool.find({giver: req.user.username})
+    res.render('profile', {user, carpoolAccepted, carpoolListed})
     
 })
 

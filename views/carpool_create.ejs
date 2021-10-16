@@ -18,18 +18,24 @@
 </head>
 
 <body>
-    <h2>Request a Carpool</h2>
-    <form action="/carpool/create" method="POST">
-        <input name="date" id="date" required placeholder="Date of Carpool"> <br><br>
-        <input name="nopeople" id="date" required> <br><br>
-        <input name="description" id="description"> <br><br>
-        <input name="origin" id="origin" required> <br><br>
-        <input name="destination" id="destination" required> <br><br>
-        <label for="regular">Regular Carpool</label>
-        <input type="checkbox" name="regular" id="regular"> <br><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="req-carp">
+        <h2>Request a Carpool</h2>
+        <form action="/carpool/create" method="POST">
+            <input name="date" id="date" type="date" placeholder="Date of Carpool"> <br><br>
+            <input name="nopeople" id="nopeople" required placeholder="Number of People Going"> <br><br>
+            <input name="description" id="description"> <br><br>
+            <input name="origin" id="origin" required> <br><br>
+            <input name="destination" id="destination" required> <br><br>
+            <label for="regular">Regular Carpool</label>
+            <input style="height: 2.5vw; width: 2.5vw; margin-left: 12.5vw;" type="checkbox" name="regular" id="regular"> <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <a href="/dashboard" class="back">
+        <span class="material-icons-outlined">
+            keyboard_arrow_right
+        </span>
+    </a>
+    <img src="https://media.discordapp.net/attachments/741244174736556076/898817312084336660/unknown.png" class="req-img" alt="">
 </body>
-
-
 </html>

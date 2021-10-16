@@ -18,24 +18,37 @@
 </head>
 
 <body>
-    <div class="user">
-        Hey, <a href="/dashboard/profile/<%=user.id%>"><%=user.username%></a>
+    <div class="nav-user">
+        <div class="user">
+            Hey,  <a href="/dashboard/profile/<%=user.id%>"><%=user.username%></a>
+        </div>
+        <a href="/carpool/create" class="create">Create a Carpool</a>
+        <div class="line-1"></div>
+        <h3 class="or">OR</h3>
+        <div class="line-2"></div>
+        <input class="n-c" type="search" placeholder="Search" name="" id="">
     </div>
-    <a href="/carpool/create" class="create">Create a Carpool</a>
-    <div class="line-1"></div>
-    <h3 class="or">OR</h3>
-    <div class="line-2"></div>
     <div class="carpool-log">
         <h2>View Carpools Nearby</h2>
+        <div class="carpool-card">
             <% for( let i = 0; i < carpools.length; i++ ) { %>
                 <%= carpools[i]['origin'] %> <br>
                 <%= carpools[i]['destination'] %> <br>
                 <%= carpools[i]['date'] %> <br>
                 <%= carpools[i]['nopeople'] %> <br>
                 <%= carpools[i]['description'] %> <br> <br>
+                <form action="/carpool/accept" method="post">
+                    <input value="<%=carpools[i]['_id']%>" id="id" name="id" hidden>
+                    <button  type="submit">Accept Carpool</button>
+                </form>
             <% } %>
+        </div>
     </div>
-    
+    <a href="/dashboard/msg" class="msg">
+        <span class="material-icons-outlined">
+            chat
+        </span>
+    </a>
 </body>
 
 </html>

@@ -9,8 +9,8 @@ const reqBoolean = {type:Boolean, required:true}
 const CarpoolSchema = new mongoose.Schema({
     "giver": reqString,
     "recievers": nonReqArray,
-    // "date": reqDate, 
-    "date": reqString,
+    "date": reqDate, 
+    // "date": reqString,
     "nopeople": reqNumber,
     "description": nonReqString,
     "origin": reqString,
