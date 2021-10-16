@@ -372,3 +372,89 @@ input{
 .user-reviews p{
     margin-top: 3.5vw;
 }
+.prof-desc{
+    margin-top: 5vw;
+}
+.prof-desc h2{
+    margin-left: 10vw;
+    margin-top: 0.5vw;
+}
+.p-a{
+    margin-left: 10vw;
+    margin-top: 2.5vw;
+    background: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.p-d{
+    margin-left: 2.5vw;
+    background: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.line-1,.line-2{
+    height: 0.2vw;
+    width: 10vw;
+    background: #111;
+    position: absolute;
+
+}
+.create{
+    background: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 15vw;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    position: absolute;
+    margin-left:12.5vw;
+    margin-top: 7.5vw;
+    text-align: center;
+}
+.carpool-log{
+    margin-top: 13.5vw;
+}
+.carpool-log h2{
+    font-size: 2.5vw;
+    margin-left: 7.5vw;
+}
+.line-1{
+    margin-left: 7.5vw;
+    margin-top: 12.71vw;
+}
+.line-2{
+    margin-left: 22.5vw;
+    margin-top: 12.71vw;
+}
+.or{
+    margin-left:19vw;
+    margin-top: 11.5vw;
+    position: absolute;
+    font-size: 1.5vw;
+}
+.user{
+    margin-left: 77.5vw;
+    font-size: 1.75vw;
+    padding-top: 2.5vw;
+}
+.user a {
+    color: #FF625A;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.user a:hover{
+    text-decoration: underline;
+}

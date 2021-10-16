@@ -8,6 +8,7 @@ router.get('/create', ensureAuthenticated, (req, res)=> {
 })
 
 router.post('/create', ensureAuthenticated, (req,res)=> {
+    console.log(req.body)
     const {date, nopeople, description, origin,regular, destination, } = req.body
     const giver = req.user.fullname
     let regBol = false 

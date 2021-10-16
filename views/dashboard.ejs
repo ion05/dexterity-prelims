@@ -6,18 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="https://media.discordapp.net/attachments/741244174736556076/898501079019450438/unknown.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="SUBMISSION FOR SILICO BATTLES BY AISG46">
 </head>
 
 <body>
-    <a href="/carpool/create">Create a Carpool</a>
-    <h2>View Carpools Nearby</h2>
-    <% for( let i = 0; i < carpools.length; i++ ) { %>
-    <%= carpools[i]['origin'] %> <br>
-    <%= carpools[i]['destination'] %> <br>
-    <%= carpools[i]['date'] %> <br>
-    <%= carpools[i]['nopeople'] %> <br>
-    <%= carpools[i]['description'] %> <br> <br>
-    <% } %>
+    <div class="user">
+        Hey, <a href="/dashboard/profile/<%=user.id%>"><%=user.username%></a>
+    </div>
+    <a href="/carpool/create" class="create">Create a Carpool</a>
+    <div class="line-1"></div>
+    <h3 class="or">OR</h3>
+    <div class="line-2"></div>
+    <div class="carpool-log">
+        <h2>View Carpools Nearby</h2>
+            <% for( let i = 0; i < carpools.length; i++ ) { %>
+                <%= carpools[i]['origin'] %> <br>
+                <%= carpools[i]['destination'] %> <br>
+                <%= carpools[i]['date'] %> <br>
+                <%= carpools[i]['nopeople'] %> <br>
+                <%= carpools[i]['description'] %> <br> <br>
+            <% } %>
+    </div>
+    
 </body>
 
 </html>
