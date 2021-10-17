@@ -446,7 +446,7 @@ input{
 .user{
     margin-left: 3.75vw;
     font-size: 1.75vw;
-    padding-top: 7.5vw;
+    padding-top: 6.5vw;
 }
 .user a {
     color: #FF625A;
@@ -491,7 +491,7 @@ input{
     margin-top: 2.5vw;
     background:rgba(199, 198, 198, 0.432);
     padding:1.5vw;
-    width: 55vw;
+    width: 45vw;
     border-radius: 1vw;
 }
 .carpool-card button{
@@ -608,3 +608,12 @@ input{
     opacity: 1;
     visibility: visible;
   }
+.none-show{
+    background: url('https://media.discordapp.net/attachments/741244174736556076/899332941228945438/unknown.png');
+    width: 35vw;
+    height: 25vw;
+    background-size: cover;
+}
+.carpool-log h3{
+    font-size: 2vw;
+}

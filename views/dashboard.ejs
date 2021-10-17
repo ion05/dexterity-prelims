@@ -21,7 +21,7 @@
     <a id="button"></a>
     <div class="nav-user">
         <div class="user">
-            Hey,  <a href="/dashboard/profile/<%=user.id%>"><%=user.username%></a>
+            Hey,  <a href="/dashboard/profile/<%=user.id%>"><%=username%></a>
         </div>
         <a href="/carpool/create" class="create">Create a Carpool</a>
         <div class="line-1"></div>
@@ -31,19 +31,24 @@
     </div>
     <div class="carpool-log">
         <h2>View Carpools Nearby</h2>
-        <div class="carpool-card">
-            <% for( let i = 0; i < carpools.length; i++ ) { %>
-                <%= carpools[i]['origin'] %> <br>
-                <%= carpools[i]['destination'] %> <br>
-                <%= carpools[i]['date'] %> <br>
-                <%= carpools[i]['nopeople'] %> <br>
-                <%= carpools[i]['description'] %> <br> <br>
-                <form action="/carpool/accept" method="post">
-                    <input value="<%=carpools[i]['_id']%>" id="id" name="id" hidden>
-                    <button  type="submit">Accept Carpool</button>
-                </form>
-            <% } %>
-        </div>
+            <% if (carpools.length < 0) { %>
+                <div class="none-show"></div>
+                <h3>No rides Available :(</h3>
+            <% }  else { %>
+                <% for( let i = 0; i < carpools.length; i++ ) { %>
+                    <div class="carpool-card">
+                        <%= carpools[i]['origin'] %> <br>
+                        <%= carpools[i]['destination'] %> <br>
+                        <%= carpools[i]['date'] %> <br>
+                        <%= carpools[i]['nopeople'] %> <br>
+                        <%= carpools[i]['description'] %> <br> <br>
+                        <form action="/carpool/accept" method="post">
+                            <input value="<%=carpools[i]['_id']%>" id="id" name="id" hidden>
+                            <button  type="submit">Accept Carpool</button>
+                        </form>
+                    </div>
+                <% } %>
+            <% } %>    
     </div>
     <a href="/dashboard/msg" class="msg">
         <span class="material-icons-outlined">
