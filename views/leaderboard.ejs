@@ -11,5 +11,13 @@
 <body>
 
 </body>
+<h2>Leaderboard</h2>
+<% for( let i = 0; i < allUsers.length; i++ ) { %>
+Rank: <%= i +1 %>
+<%=allUsers[i].username  %>
+<%=allUsers[i].points  %>
+<br>
+<hr>
+<% } %>
 
 </html>
