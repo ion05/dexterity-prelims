@@ -6,18 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
+    <style>
+    body{
+        font-family: 'Poppins' , sans-serif;
+        overflow-x: hidden;
+    }
+    table{
+        text-align: center;
+        margin-top: 2.5vw;
+        margin-left: 2.5vw;
+        width: 95vw;
+        border-collapse: collapse;
+        font-size: 1.2vw;
+        font-weight: 500;
+    }
+    table thead tr{
+        background-color: #FF625A;
+        text-align: center;
+        color: #fff;
+    }
+    
+    td{
+        padding: 1vw;
+    }
+    
+    tr:nth-child(even){
+        background-color: #333;
+        color: #fff;
+    }
+    .leader-h2{
+        font-size: 3.5vw;
+        margin-top: 2.5vw;
+        margin-left: 2.5vw;
+    }
+    </style>
+    <link rel="icon" href="https://media.discordapp.net/attachments/741244174736556076/898501079019450438/unknown.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="SUBMISSION FOR SILICO BATTLES BY AISG46">
 </head>
 
 <body>
-
+<h2 class="leader-h2">Leaderboard</h2>
+<table>
+    <thead>
+        <tr>
+            <td class="rank">Pos.</td>
+            <td class="user-t" >Username</td>
+            <td class="point">Points</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% for( let i = 0; i < allUsers.length; i++ ) { %>
+        <tr>
+            <td><%= i +1 %></td>
+            <td> <%=allUsers[i].username  %></td>
+            <td><%=allUsers[i].points  %></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
 </body>
-<h2>Leaderboard</h2>
-<% for( let i = 0; i < allUsers.length; i++ ) { %>
-Rank: <%= i +1 %>
-<%=allUsers[i].username  %>
-<%=allUsers[i].points  %>
-<br>
-<hr>
-<% } %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var btn = $('#button');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
+</script>
 
 </html>

@@ -8,5 +8,4 @@ router.get('/', (req,res)=> {
         res.render('leaderboard', {allUsers})
     }).sort({points: -1})
 })
-
 module.exports = router
