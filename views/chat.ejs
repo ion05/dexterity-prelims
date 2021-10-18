@@ -79,18 +79,7 @@
 
     // user connect
     socket.emit('user_connect', username)
-    // socket.on('prevMsgs', (msgs) => {
-    //     console.log(msgs)
-    //     for (var i = 0; i++, i < msgs.length;) {
-    //         var item = document.createElement('li');
-    //         item.textContent = `
-    //         Sender: ${msgs[i].username}
-    //         Message: ${msgs[i].msg}
-    //         `;
-    //         messages.appendChild(item);
-    //         window.scrollTo(0, document.body.scrollHeight);
-    //     }
-    // })
+
     var form = document.getElementById('form');
     var input = document.getElementById('input');
 
