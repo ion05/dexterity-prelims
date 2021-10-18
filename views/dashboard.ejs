@@ -33,16 +33,16 @@
     </div>
     <div class="carpool-log">
         <% if (query) { %>
-            <h2>Carpools matching <%=query%></h2>
+        <h2>Carpools matching <%=query%></h2>
         <% } else { %>
-            
+
         <% } %>
         <% if (carpools.length < 0) { %>
-            <h2>View Carpools Nearby</h2>
-            <div class="none-show"></div>
-            <h3>No rides Available :(</h3>
+        <h2>View Carpools Nearby</h2>
+        <div class="none-show"></div>
+        <h3>No rides Available :(</h3>
         <% }  else { %>
-            <h2>View Carpools Nearby</h2>
+        <h2>View Carpools Nearby</h2>
         <% for( let i = 0; i < carpools.length; i++ ) { %>
 
         <div class="carpool-card">
@@ -59,7 +59,7 @@
         <% } %>
         <% } %>
     </div>
-    <a href="/dashboard/msg" class="msg">
+    <a href="/chat" class="msg">
         <span class="material-icons-outlined">
             chat
         </span>
