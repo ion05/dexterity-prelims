@@ -643,3 +643,65 @@ input{
     margin-top: 2.5vw;
     margin-left: 2.5vw;
 }
+.point{
+    position: absolute;
+    margin-left:57.5vw;
+    margin-top: -15vw;
+    font-size: 2.5vw;
+}
+.animated-progress {
+    width: 15vw;
+    height: .5vw;
+    border-radius: 5px;
+    margin-left: -2.5vw;
+    overflow: hidden;
+    position: relative;
+    background: #111;
+  }
+  
+  .animated-progress span {
+    height: 100%;
+    display: block;
+    width: 0;
+    color: rgb(255, 251, 251);
+    font-size: 0.75vw;
+    line-height: 30px;
+    position: absolute;
+    text-align: end;
+    padding-right: 5px;
+
+  }
+  
+  .progress-blue span {
+    background-color: #ec5c55;
+  }
+  .r-p{
+      font-size: 1vw;margin-top: 1.5vw;
+  }
+  .redeem{
+      width: 15vw;
+      margin-top: 2.5vw;
+      font-family: 'Poppins', sans-serif;
+      height: 2.5vw;
+      font-size: 1.25vw;
+      background: #111;
+      color: #fff; 
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-left: -2.5vw;
+  }
+  .redeem-disabled{
+    opacity: 0.65; 
+    width: 15vw;
+    margin-top: 2.5vw;
+    font-family: 'Poppins', sans-serif;
+    height: 2.5vw;
+    font-size: 1.25vw;
+    background: #111;
+    color: #fff; 
+    border: none;
+    border-radius: 10px;
+    margin-left: -2.5vw;
+    pointer-events: none;
+  }

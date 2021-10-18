@@ -20,10 +20,12 @@ router.get('/',ensureAuthenticated,(req,res)=>{
 
 router.get('/profile/:id',ensureAuthenticated, async (req,res)=>{
     let id = req.params.id
+    let point = req.user.points
+    console.log(point)
     const user = await User.findOne({"_id":id})
     const carpoolAccepted = await Carpool.find({recievers: {$in: [req.user.username]}})
     const carpoolListed = await Carpool.find({giver: req.user.username})
-    res.render('profile', {user, carpoolAccepted, carpoolListed})
+    res.render('profile', {user, carpoolAccepted, carpoolListed, point})
     
 })
 
