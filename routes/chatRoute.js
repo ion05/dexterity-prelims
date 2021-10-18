@@ -6,7 +6,7 @@ const Message = require('../models/Message')
 
 router.get('/', ensureAuthenticated, (req,res)=> {
     Message.find({}).then((msgs)=>{
-        res.render('chat', {user:req.user, msgs})
+        res.render('chat', {user:req.user, msgs,current_user : req.user.username})
     })
 
     

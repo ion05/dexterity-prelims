@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Socket.IO chat</title>
+    <title>Messages</title>
     <style>
         body {
             margin: 0;
             padding-bottom: 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         #form {
@@ -29,6 +29,7 @@
             flex-grow: 1;
             border-radius: 2rem;
             margin: 0.25rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         #input:focus {
@@ -36,13 +37,17 @@
         }
 
         #form>button {
-            background: #333;
+            background: #FF625A;
             border: none;
-            padding: 0 1rem;
-            margin: 0.25rem;
-            border-radius: 3px;
+            border-radius: 10px;
+            width: 5vw;
+            height: 2.5vw;
             outline: none;
-            color: #fff;
+            color:#111;
+            cursor: pointer;
+            font-size: 1.5vw;
+            padding-top: 0.5vw;
+            margin-top: 0.15vw;
         }
 
         #messages {
@@ -52,24 +57,71 @@
         }
 
         #messages>li {
-            padding: 0.5rem 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
-        #messages>li:nth-child(odd) {
-            background: #efefef;
+        .material-icons-outlined{
+            font-family: 'Material Icons', sans-serif;
+        }
+        h6{
+            color: #cfcece;
+        }
+        .msg-blob{
+            background: #eee;
+            padding-left: 1vw;
+            padding-top: 0.5vw;
+            padding-bottom: 0.5vw;
+            width: 25vw;
+            border-radius: 10px;
         }
     </style>
 </head>
-
+<link rel="icon" href="https://media.discordapp.net/attachments/741244174736556076/898501079019450438/unknown.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="SUBMISSION FOR SILICO BATTLES BY AISG46">
 <body>
     <ul id="messages">
         <% for( let i = 0; i < msgs.length; i++ ) { %>
-        <li>Sender: <%= msgs[i].username%> Msg: <%= msgs[i].msg%></li>
+        <% if (msgs[i].username == current_user) { %>
+            <li>
+                <h6 style="margin-left: 92.5vw;"><%= msgs[i].username%> </h6>
+                <div style="
+                margin-left: 70.5vw;
+                background: #FF625A;
+                padding-left: 1vw;
+                padding-top: 0.5vw;
+                padding-bottom: 0.5vw;
+                width: 25vw;
+                border-radius: 10px;
+                color: #fff;
+                ">
+                    <%= msgs[i].msg%>
+                </div>
+            </li>
+        <% } else{  %>
+            <li>
+                <h6><%= msgs[i].username%> </h6>
+                <div class="msg-blob">
+                    <%= msgs[i].msg%>
+                </div>
+            </li>
+        <%}%>
+        <br>
         <% } %>
 
     </ul>
     <form id="form" action="">
-        <input id="input" autocomplete="off" /><button>Send</button>
+        <input id="input" autocomplete="off" placeholder="Type your message" />
+        <button>
+            <span class="material-icons-outlined">
+                send
+            </span>
+        </button>
     </form>
 </body>
 <script src="/socket.io/socket.io.js"></script>
