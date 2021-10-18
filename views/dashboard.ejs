@@ -42,8 +42,9 @@
             <div class="none-show"></div>
             <h3>No rides Available :(</h3>
         <% }  else { %>
+            <h2>View Carpools Nearby</h2>
         <% for( let i = 0; i < carpools.length; i++ ) { %>
-        <h2>View Carpools Nearby</h2>
+
         <div class="carpool-card">
             <%= carpools[i]['origin'] %> <br>
             <%= carpools[i]['destination'] %> <br>
