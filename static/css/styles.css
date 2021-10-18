@@ -503,6 +503,12 @@ input{
     font-family: 'Poppins', sans-serif;
     border-radius: .5vw;
     cursor: pointer;
+    transition: all 0.1s ease;
+}
+.carpool-card button:hover{
+    background: #FF625A;
+    color: #111;
+    font-weight: 600;
 }
 .req-carp{
     position: absolute;
