@@ -87,23 +87,6 @@
 <body>
     <ul id="messages">
         <% for( let i = 0; i < msgs.length; i++ ) { %>
-        <% if (msgs[i].username == current_user) { %>
-            <li>
-                <h6 style="margin-left: 92.5vw;"><%= msgs[i].username%> </h6>
-                <div style="
-                margin-left: 70.5vw;
-                background: #FF625A;
-                padding-left: 1vw;
-                padding-top: 0.5vw;
-                padding-bottom: 0.5vw;
-                width: 25vw;
-                border-radius: 10px;
-                color: #fff;
-                ">
-                    <%= msgs[i].msg%>
-                </div>
-            </li>
-        <% } else{  %>
             <li>
                 <h6><%= msgs[i].username%> </h6>
                 <div class="msg-blob">
@@ -112,8 +95,6 @@
             </li>
         <%}%>
         <br>
-        <% } %>
-
     </ul>
     <form id="form" action="">
         <input id="input" autocomplete="off" placeholder="Type your message" />

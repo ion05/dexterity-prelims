@@ -382,7 +382,7 @@ input{
 }
 .p-a{
     margin-left: 10vw;
-    margin-top: 2.5vw;
+    margin-top: 5vw;
     background: black;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -391,6 +391,9 @@ input{
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
+    position: absolute;
+    width: 10vw;
+    text-align: center;
 }
 .p-d{
     margin-left: 2.5vw;
@@ -646,7 +649,7 @@ input{
 .point{
     position: absolute;
     margin-left:57.5vw;
-    margin-top: -15vw;
+    margin-top: -10vw;
     font-size: 2.5vw;
 }
 .animated-progress {
@@ -704,4 +707,20 @@ input{
     border-radius: 10px;
     margin-left: -2.5vw;
     pointer-events: none;
+  }
+  .c-a ,.c-r{
+      width: 15vw;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      border-radius: 10px;
+      height: 2.5vw;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25vw; margin-right: 2.5vw;
+      border:none;
+      cursor: pointer;
+      margin-top: 10vw;
+    }
+  .c-a{
+      margin-left: 10vw;
   }

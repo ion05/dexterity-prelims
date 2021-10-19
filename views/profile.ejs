@@ -24,26 +24,26 @@
         <h2>Name: <%=user.fullname%></h2>
         <h2>Username: <%=user.username%></h2>
         <h2>Email: <%=user.email%></h2>
-        <h2>Carpool requests made: </h2>
-        <h2>Carpool requests accepted:  </h2>
     </div>
     <div class="point">
-        <h1><%=point%>/10</h1>
+        <h1><%=user.points%>/10</h1>
         <div class="animated-progress progress-blue">
-            <span data-progress="<%=point%>"></span>
+            <span data-progress="<%=user.points%>"></span>
         </div>
-        <% if(point == 10) { %>
+        <% if(user.points == 10) { %>
             <button class="redeem ">Reedem your prize now</button>
         <%} else {%>
-            <p class="r-p"> <%= 10 - point  %> left for your prize</p>
+            <p class="r-p"> <%= 10 - user.points  %> left for your prize</p>
             <button class="redeem-disabled">Reedem your prize </button>
         <% } %>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
     <a href="/logout" class="p-a">Logout</a>
+    <div class="carpool-accept-req-log">
+        <button class="c-a">Carpool Accepted</button><button class="c-r">Carpool Requests </button>
+        <div class="carpool-log-display">
+
+        </div>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -57,5 +57,6 @@ $(".animated-progress span").each(function () {
   );
   $(this).text($(this).attr("data-progress")*10 + "%");
 });
+
 </script>
 </html>
