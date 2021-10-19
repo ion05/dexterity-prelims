@@ -2,61 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= user.username %> | Profile</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="https://media.discordapp.net/attachments/741244174736556076/898501079019450438/unknown.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="description" content="SUBMISSION FOR SILICO BATTLES BY AISG46">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= user.username %> | Profile</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="https://media.discordapp.net/attachments/741244174736556076/898501079019450438/unknown.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="SUBMISSION FOR SILICO BATTLES BY AISG46">
 </head>
-<body>
-    <br>
-    <br>
-    <a href="/dashboard" class="p-d">Go back</a>
-    <div class="prof-desc">
-        <h2>Name: <%=user.fullname%></h2>
-        <h2>Username: <%=user.username%></h2>
-        <h2>Email: <%=user.email%></h2>
-    </div>
-    <div class="point">
-        <h1><%=user.points%>/10</h1>
-        <div class="animated-progress progress-blue">
-            <span data-progress="<%=user.points%>"></span>
-        </div>
-        <% if(user.points == 10) { %>
-            <button class="redeem ">Reedem your prize now</button>
-        <%} else {%>
-            <p class="r-p"> <%= 10 - user.points  %> left for your prize</p>
-            <button class="redeem-disabled">Reedem your prize </button>
-        <% } %>
-    </div>
-    <a href="/logout" class="p-a">Logout</a>
-    <div class="carpool-accept-req-log">
-        <button class="c-a">Carpool Accepted</button><button class="c-r">Carpool Requests </button>
-        <div class="carpool-log-display">
 
-        </div>
+<body>
+  <br>
+  <br>
+  <a href="/dashboard" class="p-d">Go back</a>
+  <div class="prof-desc">
+    <h2>Name: <%=user.fullname%></h2>
+    <h2>Username: <%=user.username%></h2>
+    <h2>Email: <%=user.email%></h2>
+  </div>
+  <div class="point">
+    <h1><%=user.points%>/10</h1>
+    <div class="animated-progress progress-blue">
+      <span data-progress="<%=user.points%>"></span>
     </div>
+    <% if(user.points == 10) { %>
+    <button class="redeem ">Reedem your prize now</button>
+    <%} else {%>
+    <p class="r-p"> <%= 10 - user.points  %> left for your prize</p>
+    <button class="redeem-disabled">Reedem your prize </button>
+    <% } %>
+  </div>
+  <a href="/logout" class="p-a">Logout</a>
+  <div class="carpool-accept-req-log">
+    <button class="c-a">Carpool Accepted</button><button class="c-r">Carpool Requests </button>
+    <div class="carpool-log-display">
+
+    </div>
+  </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-$(".animated-progress span").each(function () {
-  $(this).animate(
-    {
-      width: $(this).attr("data-progress")*10 + "%",
-    },
-    1000
-  );
-  $(this).text($(this).attr("data-progress")*10 + "%");
-});
+  $(".animated-progress span").each(function () {
+    $(this).animate({
+        width: $(this).attr("data-progress") * 10 + "%",
+      },
+      1000
+    );
+    $(this).text($(this).attr("data-progress") * 10 + "%");
+  });
 
+  var carpoolAccepted = "<%= carpoolAccepted.length %>"
+  document.querySelector('.c-r').addEventListener('click', () => {
+    if (carpoolAccepted.length == 0) {
+      document.querySelector('.carpool-log-display').innerHTML = "<h1>Nothing Listed</h1>";
+    } else {
+      for (let i = 0; i < carpoolAccepted; i++) {
+        document.querySelector('.carpool-log-display').innerHTML = `
+        <%= carpoolAccepted[i]['id'] %>`;
+      }
+    }
+  })
 </script>
+
 </html>

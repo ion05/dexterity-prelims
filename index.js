@@ -52,9 +52,13 @@ io.on('connection', (socket)=> {
         
     })
     socket.on('chat message', (msg)=> {
-        let totalmsg = `
-        Sender:  ${userName} Msg: ${msg}
-        `
+        // let totalmsg = `
+        // Sender:  ${userName} Msg: ${msg}
+        // `
+        let totalmsg = {
+            sender: userName,
+            msg: msg
+        }
         io.emit('chat message', totalmsg)
         const newMessage = new Message({
             msg: msg,
