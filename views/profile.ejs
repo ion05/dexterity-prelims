@@ -24,6 +24,8 @@
     <h2>Name: <%=user.fullname%></h2>
     <h2>Username: <%=user.username%></h2>
     <h2>Email: <%=user.email%></h2>
+    <h2>Carpools Accepted <%= carpoolAccepted.length%> </h2>
+    <h2>Carpools Listed <%= carpoolListed.length%> </h2>
   </div>
   <div class="point">
     <h1><%=user.points%>/10</h1>
@@ -38,12 +40,13 @@
     <% } %>
   </div>
   <a href="/logout" class="p-a">Logout</a>
-  <div class="carpool-accept-req-log">
+  <!-- <div class="carpool-accept-req-log">
     <button class="c-a">Carpool Accepted</button><button class="c-r">Carpool Requests </button>
     <div class="carpool-log-display">
 
     </div>
-  </div>
+  </div> -->
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -56,18 +59,6 @@
     );
     $(this).text($(this).attr("data-progress") * 10 + "%");
   });
-
-  var carpoolAccepted = "<%= carpoolAccepted.length %>"
-  document.querySelector('.c-r').addEventListener('click', () => {
-    if (carpoolAccepted.length == 0) {
-      document.querySelector('.carpool-log-display').innerHTML = "<h1>Nothing Listed</h1>";
-    } else {
-      for (let i = 0; i < carpoolAccepted; i++) {
-        document.querySelector('.carpool-log-display').innerHTML = `
-        <%= carpoolAccepted[i]['id'] %>`;
-      }
-    }
-  })
 </script>
 
 </html>

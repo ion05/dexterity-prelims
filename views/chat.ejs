@@ -112,7 +112,7 @@
 <script>
     var socket = io();
     var username = "<%= user.username %>"
-
+        window.scrollTo(0, document.body.scrollHeight);
         // user connect
         socket.emit('user_connect', username)
 
@@ -128,7 +128,14 @@
         })
         socket.on('chat message', function (msg) {
         var item = document.createElement('li');
-        item.textContent = msg;
+        var user = "<%= user.username %>"
+        item.innerHTML = `
+        <h6>${user}</h6>
+        <div class="msg-blob">
+            ${msg.msg}
+        </div>
+        <br>
+        `
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
         });
